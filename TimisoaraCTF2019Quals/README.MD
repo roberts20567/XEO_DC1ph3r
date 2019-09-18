@@ -29,8 +29,27 @@
 >This file seems... odd
 
 #### Solution:
+by @mmzmihai
 
-flag:
+Even if the text is strange we recognize the pattern indicated by the braces and the caps lock chars.
+
+Encoded text:
+-> Otil bw amm gwc uilm qb! 
+Emtkwum bw bpm ewvlmznct ewztl wn kzgxbwozixpg! 
+Pmzm qa gwcz zmeizl:
+ BQUKBN{Rctqca_Kimaiz_e0ctl_j3_xzwcl}
+ 
+The main hint is the text file name, "caesar.txt"
+We used an online tool to decode the message, finding out 
+that the correct key is 8, as 'a' has to turn into letter 'i'.
+
+Decoded text:
+-> Glad to see you made it! 
+Welcome to the wonderful world of cryptography! 
+Here is your reward:
+flag: `TIMCTF{Julius_Caesar_w0uld_b3_proud}`
+
+
 <br>
 <a name="proof_of_work"></a>
 ### Proof of work
