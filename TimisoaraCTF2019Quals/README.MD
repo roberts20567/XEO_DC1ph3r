@@ -64,7 +64,7 @@ After a few tries I got the correct bytes and the flag.
 
 flag: `TIMCTF{Y0u_really_make_A_diff3rence}`
 
-> Note: Because DEL wasn`t included in the script, at some point it gets inconsistent but you get the correct char after a few tries
+> Note: Because DEL wasn't included in the script, at some point it gets inconsistent but you get the correct char after a few tries
 
 <br><br>
 
