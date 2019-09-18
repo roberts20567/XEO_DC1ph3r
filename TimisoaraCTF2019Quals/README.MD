@@ -55,13 +55,13 @@ flag: `TIMCTF{Julius_Caesar_w0uld_b3_proud}`
 
 ### Proof of work
 #### Description:
-by assassinduke
-
 >While developing an anti-bot system we thought of a system to test if the users are indeed human. You need to enter a string whose SHA256 has the last 7 digits 0. As this hash is secure you need to use some processing power, thus denying spam. Sort of like mining bitcoin.
 
 >nc 89.38.208.143 21021
 
 #### Solution:
+by assassinduke
+
 This challenge was pretty straight forward it only required to brute force text that was hashed with sha256 until a regex found the 6 ending zeros.
 
 Code:
