@@ -316,6 +316,8 @@ by assassinduke
 This is where it started to get interesting. At a quick glance IDA revealed only assembly code that was pretty difficult to understand in a short amount of time.
 But Ghidra's decompiler offered some easier to understand code that, in the end was based of on only one formula and the encrypted text that was stored and easily found by Ghidra and IDA.
 
+[![Ez Update](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/ezrev.png "Ez Update")](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/ezrev.png "Ez Update")
+
 After a bit of thinking the code was doing a Caesar cipher using '-a' as a key and a bit of obfuscation
 
 
