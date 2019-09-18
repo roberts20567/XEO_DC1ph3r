@@ -29,7 +29,7 @@
 >This file seems... odd
 
 #### Solution:
-by @mmzmihai
+by mmzmihai
 
 Even if the text is strange we recognize the pattern indicated by the braces and the caps lock chars.
 
@@ -68,6 +68,8 @@ flag:
 >I found this strange text. It is written in some strange alphabet. Can you decode it?
 
 #### Solution:
+by roberts2056
+
 <span style="color:red">**(OLD FLAG)**</span>
 Being a crypto challenge, there isn't any hidden file or text, so all we can do is to make a frequency analysis on the text.
 
@@ -87,6 +89,8 @@ flag: `TIMCTF{ETAOIN,SHRDLU}`
 >nc 89.38.208.143 21022
 
 #### Solution:
+by roberts2056
+
 We are welcomed with a hex string that we need to decode which has been encoded with an unknown algorithm.
 The good news is that we can input 256 strings and the program will encode them for us.
 After some trial and error I finally managed to understand what the script does.
@@ -123,6 +127,8 @@ flag: `TIMCTF{Y0u_really_make_A_diff3rence}`
 > nc 89.38.208.144 11113
 
 #### Solution:
+by roberts2056
+
 The vulnerability is in `input()` function. While `raw_input()` takes the argument as a specified type, `input()` evaluates the argument, so we can easily write valid python code as input:
 
 Payload:  `sys.stdout.write(open("flag.txt").readline())`
@@ -153,6 +159,8 @@ flag:
 > Non-standard flag format
 
 #### Solution:
+by roberts2056
+
 If we look in the Journal, there seems to be a file named tctf.png, which doesn't appear to be anywhere, but if we open the .img with a hex editor we can find the image at the end of the file (we can easily distinguish the file hence it's PNG file signature)
 [![Hex deleted image](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/deleted_file_hxd.png "Hex deleted image")](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/deleted_file_hxd.png "Hex deleted image")
 After we recover the file, the flag is "painted" in the image.
@@ -168,6 +176,8 @@ flag: `flag{I_s33_the_uns33n}`
 >Note: if you think you "fixed" it and it does not open, try using a few different photo viewers.
 
 #### Solution:
+by roberts2056
+
 At first, it appears to be a corrupt image, but if we xor the first 4 bytes with the normal file signature of a PNG we get 0x7a each time.
 Next step is to make a python script to xor each byte of the image with 0x7a, and after that we get a half-corrupted valid (everything but the crc) image.
 If then we 'strings'  the file, we immediately see a weird line
@@ -185,6 +195,8 @@ flag: `TIMCTF{Brav0_j0hnule!}` (right bracket is missing in the final output)
 >I stumbled upon this strange QR code which seems to be in a new format. Can you help me decode it?
 
 #### Solution:
+by roberts2056
+
 After googling about the rgb QR a while, we found a couple of articles about the technique, and it seems that it was utilizing the color channels to overlap the QR codes.
 So we found this nice online utility from our dear friends 
 > www.dcode.fr --> RGB channels.
@@ -207,6 +219,8 @@ flag: `TIMCTF{Th1s_is_A_4_part_flag}`
 >Have you read them?
 
 #### Solution:
+by all
+
 Just so you know we read the rules :)
 
 flag: `TIMCTF{sometext}`
@@ -237,6 +251,8 @@ flag:
 >This application likes to jump!
 
 #### Solution:
+by roberts2056
+
 The program seems to be a simple decription script, besides all the junk functions imported.
 But if we search for strings with Ghidra, there seems to be a "flag" string found in memory which conflicts with the instructions.
 
@@ -259,6 +275,7 @@ flag: `TIMCTF{deC3pt1ve_ExceP0ti0n_h4ndLer}`
 >http://89.38.208.143:20001/
 
 #### Solution:
+by roberts2056
 Opening the page with inspect element, reveals the flag in a comment in `<body>`
 
 flag: `TIMCTF{D0_not_b3_superfic1al}`
