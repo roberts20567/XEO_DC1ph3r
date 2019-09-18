@@ -122,6 +122,7 @@ At first, it appears to be a corrupt image, but if we xor the first 4 bytes with
 Next step is to make a python script to xor each byte of the image with 0x7a, and after that we get a half-corrupted valid (everything but the crc) image.
 If then we 'strings'  the file, we immediately see a weird line
 [![Hatz](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/snip_hatz.PNG "Hatz")](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/snip_hatz.PNG "Hatz")
+
 Considering that the first 6 letters are uppercase, and W repeats in positions 1 and 5, that must be the header of the flag, TIMCTF.
 The flag encoding is as follows: `ord(x) = ord(x) + 3`, so the decoding: 
 `ord(x) = ord(x) - 3`. Write that in python.
@@ -183,8 +184,11 @@ flag:
 #### Solution:
 The program seems to be a simple decription script, besides all the junk functions imported.
 But if we search for strings with Ghidra, there seems to be a "flag" string found in memory which conflicts with the instructions.
+
 [![Flag Jump](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/flag_jump.PNG "Flag Jump")](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/flag_jump.PNG "Flag Jump")
+
 If we 'strings' the file, we can actually see the flag string and before that, what appears to be a base64 encoded string
+
 [![Base64 Jump](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/jump_base64.PNG "Base64 Jump")](https://raw.githubusercontent.com/roberts20567/XEO_DC1ph3r/master/TimisoaraCTF2019Quals/jump_base64.PNG "Base64 Jump")
 
 After we decode it, we get the flag.
