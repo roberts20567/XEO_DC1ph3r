@@ -55,13 +55,67 @@ flag: `TIMCTF{Julius_Caesar_w0uld_b3_proud}`
 
 ### Proof of work
 #### Description:
+by assassinduke
+
 >While developing an anti-bot system we thought of a system to test if the users are indeed human. You need to enter a string whose SHA256 has the last 7 digits 0. As this hash is secure you need to use some processing power, thus denying spam. Sort of like mining bitcoin.
 
 >nc 89.38.208.143 21021
 
 #### Solution:
+This challenge was pretty straight forward it only required to brute force text that was hashed with sha256 until a regex found the 6 ending zeros.
 
-flag:
+Code:
+```
+import string
+import hashlib
+import re
+ALLOWED_CHARACTERS = string.printable
+NUMBER_OF_CHARACTERS = len(ALLOWED_CHARACTERS)
+
+def characterToIndex(char):
+    return ALLOWED_CHARACTERS.index(char)
+
+def indexToCharacter(index):
+    if NUMBER_OF_CHARACTERS <= index:
+        raise ValueError("Index out of range.")
+    else:
+        return ALLOWED_CHARACTERS[index]
+
+def next(string):
+    """ Get next sequence of characters.
+    Treats characters as numbers (0-255). Function tries to increment
+    character at the first position. If it fails, new character is
+    added to the back of the list.
+    It's basically a number with base = 256.
+    :param string: A list of characters (can be empty).
+    :type string: list
+    :return: Next list of characters in the sequence
+    :rettype: list
+    """
+    if len(string) <= 0:
+        string.append(indexToCharacter(0))
+    else:
+        string[0] = indexToCharacter((characterToIndex(string[0]) + 1) % NUMBER_OF_CHARACTERS)
+        if characterToIndex(string[0]) is 0:
+            return list(string[0]) + next(string[1:])
+    return string
+
+def main():
+    sequence = list()
+    while True:
+        sequence = next(sequence)
+        str1 = ''.join(sequence)
+        hash = hashlib.sha256(str1.encode('utf-8')).hexdigest()
+        if re.match('.*[0]{7}$', hash):
+            print("{} = {}".format(str1,hash))
+            break
+
+if __name__ == "__main__":
+    main()
+```
+
+flag: `TIMCTF{9e13449f334ded947431aa5001c2e9ab429ab5ddf880f416fe352a96eb2af122}`
+
 <br>
 <a name="alien_alphabet"></a>
 
@@ -242,8 +296,13 @@ flag: `TIMCTF{sometext}`
 >This program asks me for the flag, but i don't know it!
 
 #### Solution:
+by assassinduke
 
-flag:
+Another easy challenge to start off the category, for this one opening the file with a reverse engineering app like IDA revealed the code in plane text in the output function
+
+
+flag: `TIMCTF{Wh0_know5_a5m_kn0ws_R3V}`
+
 <br>
 <a name="easy_rev"></a>
 
@@ -252,8 +311,15 @@ flag:
 >Like the last one, but harder
 
 #### Solution:
+by assassinduke
 
-flag:
+This is where it started to get interesting. At a quick glance IDA revealed only assembly code that was pretty difficult to understand in a short amount of time.
+But Ghidra's decompiler offered some easier to understand code that, in the end was based of on only one formula and the encrypted text that was stored and easily found by Ghidra and IDA.
+
+After a bit of thinking the code was doing a Caesar cipher using '-a' as a key and a bit of obfuscation
+
+
+flag: `TIMCTF{rotated13flag}`
 
 <br>
 <a name="strange_jump"></a>
