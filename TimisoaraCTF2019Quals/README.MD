@@ -1,5 +1,29 @@
 # Timisoara CTF 2019 Quals
+## Sections
+### Crypto section
+[Baby Crypto](#baby_crypto)<br>
+[Proof of work](#proof_of_work)<br>
+[Alien Alphabet](#alien_alphabet)<br>
+[Strange cipher](#strange_cipher)
+### Exploit section
+[Hiss hiss python](hiss_hiss_python)<br>
+[Swag](swag)
+### Forensics section
+[Deleted file](deleted_file)<br>
+[Strange image](strange_image)<br>
+[Tri-color QR](tri-color_qr)
+### Misc section
+[Read the rules](read_the_rules)
+### Reverse engineering section
+[Baby Rev](baby_rev)<br>
+[Easy Rev](easy_rev)<br>
+[Strange jump](strange_jump)
+### Web section
+[Not so empty website](not_so_empty_website)<br>
+[Admin panel](admin_panel)
+<br><br>
 ## Crypto section
+<a name="baby_crypto"></a>
 ### Baby Crypto
 #### Description:
 >This file seems... odd
@@ -8,6 +32,7 @@
 
 flag:
 <br>
+<a name="proof_of_work"></a>
 ### Proof of work
 #### Description:
 >While developing an anti-bot system we thought of a system to test if the users are indeed human. You need to enter a string whose SHA256 has the last 7 digits 0. As this hash is secure you need to use some processing power, thus denying spam. Sort of like mining bitcoin.
@@ -18,6 +43,7 @@ flag:
 
 flag:
 <br>
+<a name="alien_alphabet"></a>
 ### Alien Alphabet
 #### Description:
 >I found this strange text. It is written in some strange alphabet. Can you decode it?
@@ -34,6 +60,7 @@ and from there you can start to guess other words like 'the', 'Hello' etc...
 
 flag: `TIMCTF{ETAOIN,SHRDLU}`
 <br>
+<a name="strange_cipher"></a>
 ### Strange cipher
 #### Description:
 >I have found this strange encryption service. Can you decode it?
@@ -69,6 +96,7 @@ flag: `TIMCTF{Y0u_really_make_A_diff3rence}`
 <br><br>
 
 ## Exploit section
+<a name="hiss_hiss_python"></a>
 ### Hiss hiss python
 #### Description:
 > This snake likes to h1ss at its input.
@@ -84,6 +112,7 @@ Payload:  `sys.stdout.write(open("flag.txt").readline())`
 
 flag: `TIMCTF{h1ss_h1ss_shell}`
 <br>
+<a name="swag"></a>
 ### Swag
 #### Description:
 >The server only lets hackers in, not script kiddies.
@@ -95,6 +124,7 @@ flag: `TIMCTF{h1ss_h1ss_shell}`
 flag:
 <br><br>
 ## Forensics section
+<a name="deleted_file"></a>
 ### Deleted file
 #### Description:
 >Help! I accidentally deleted a photo! Can you recover it for me please?
@@ -111,6 +141,7 @@ After we recover the file, the flag is "painted" in the image.
 
 flag: `flag{I_s33_the_uns33n}`
 <br>
+<a name="strange_image"></a>
 ### Strange image
 #### Description:
 >I received this "image" in my mailbox today, but I can not open it, as if it was corrupted or something. Can you fix it and tell me if it has any hidden meaning?
@@ -129,6 +160,7 @@ The flag encoding is as follows: `ord(x) = ord(x) + 3`, so the decoding:
 
 flag: `TIMCTF{Brav0_j0hnule!}` (right bracket is missing in the final output)
 <br>
+<a name="tri-color_qr"></a>
 ### Tri-color QR
 #### Description:
 >I stumbled upon this strange QR code which seems to be in a new format. Can you help me decode it?
@@ -150,6 +182,7 @@ Voila! there was a zip file after the PNG image in which I found the last part o
 flag: `TIMCTF{Th1s_is_A_4_part_flag}`
 <br><br>
 ## Misc section
+<a name="read_the_rules"></a>
 ### Read the rules
 #### Description:
 >Have you read them?
@@ -160,6 +193,7 @@ Just so you know we read the rules :)
 flag: `TIMCTF{sometext}`
 <br><br>
 ## Reverse engineering section
+<a name="baby_rev"></a>
 ### Baby Rev
 #### Description:
 >This program asks me for the flag, but i don't know it!
@@ -168,6 +202,7 @@ flag: `TIMCTF{sometext}`
 
 flag:
 <br>
+<a name="easy_rev"></a>
 ### Easy Rev
 #### Description:
 >Like the last one, but harder
@@ -177,6 +212,7 @@ flag:
 flag:
 
 <br>
+<a name="strange_jump"></a>
 ### Strange jump
 #### Description:
 >This application likes to jump!
@@ -196,6 +232,7 @@ After we decode it, we get the flag.
 flag: `TIMCTF{deC3pt1ve_ExceP0ti0n_h4ndLer}`
 
 ## Web section
+<a name="not_so_empty_website"></a>
 ### Not so empty website
 #### Description:
 >This website looks empty, but trust me, it is not!
@@ -207,6 +244,7 @@ Opening the page with inspect element, reveals the flag in a comment in `<body>`
 
 flag: `TIMCTF{D0_not_b3_superfic1al}`
 <br>
+<a name="admin_panel"></a>
 ### Admin panel
 #### Description:
 >Your job is to hack this admin panel and login.
