@@ -65,7 +65,7 @@ by assassinduke
 This challenge was pretty straight forward it only required to brute force text that was hashed with sha256 until a regex found the 6 ending zeros.
 
 Code:
-```
+```python
 import string
 import hashlib
 import re
