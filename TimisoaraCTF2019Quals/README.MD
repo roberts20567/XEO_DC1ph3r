@@ -7,7 +7,7 @@
 [Strange cipher](#strange_cipher)
 ### Exploit section
 [Hiss hiss python](#hiss_hiss_python)<br>
-[Swag](swag)
+[Swag](#swag)
 ### Forensics section
 [Deleted file](#deleted_file)<br>
 [Strange image](#strange_image)<br>
@@ -204,6 +204,8 @@ flag: `TIMCTF{h1ss_h1ss_shell}`
 >nc 89.38.208.144 11111
 
 #### Solution:
+by NClaudiu
+
 At first the problem looks like a legit exploit challenge, but simply searching for "TIMCTF" in the compiled file finds the flag.
 
 flag:`TIMCTF{1_am_th3_c00kie_m0nsta}`
@@ -372,7 +374,7 @@ flag: `TIMCTF{D0_not_b3_superfic1al}`
 >http://89.38.208.143:20003/
 
 #### Solution:
-by
+by NClaudiu
 
 The first thing I thought when I saw the page was to do SQL Injection.
 Strangely, it worked.
